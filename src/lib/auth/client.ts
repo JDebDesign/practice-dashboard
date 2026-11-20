@@ -1,6 +1,7 @@
 'use client';
 
 import type { User } from '@/types/user';
+import { assetPath } from '@/lib/asset-path';
 
 function generateToken(): string {
   const arr = new Uint8Array(12);
@@ -10,7 +11,7 @@ function generateToken(): string {
 
 const user = {
   id: 'USR-000',
-  avatar: '/assets/avatar.png',
+  avatar: assetPath('/assets/avatar.png'),
   firstName: 'Sofia',
   lastName: 'Rivers',
   email: 'sofia@devias.io',

@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { ArrowLeftIcon } from '@phosphor-icons/react/dist/ssr/ArrowLeft';
 
 import { config } from '@/config';
+import { assetPath } from '@/lib/asset-path';
 import { paths } from '@/paths';
 
 export const metadata = { title: `Not found | ${config.site.name}` } satisfies Metadata;
@@ -20,7 +21,7 @@ export default function NotFound(): React.JSX.Element {
           <Box
             component="img"
             alt="Under development"
-            src="/assets/error-404.png"
+            src={assetPath('/assets/error-404.png')}
             sx={{ display: 'inline-block', height: 'auto', maxWidth: '100%', width: '400px' }}
           />
         </Box>

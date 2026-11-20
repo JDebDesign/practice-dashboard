@@ -8,9 +8,11 @@ import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import { assetPath } from '@/lib/asset-path';
+
 const user = {
   name: 'Sofia Rivers',
-  avatar: '/assets/avatar.png',
+  avatar: assetPath('/assets/avatar.png'),
   jobTitle: 'Senior Developer',
   country: 'USA',
   city: 'Los Angeles',
