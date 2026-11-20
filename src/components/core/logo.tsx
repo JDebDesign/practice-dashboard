@@ -4,6 +4,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useColorScheme } from '@mui/material/styles';
 
+import { assetPath } from '@/lib/asset-path';
 import { NoSsr } from '@/components/core/no-ssr';
 
 const HEIGHT = 60;
@@ -19,13 +20,14 @@ export interface LogoProps {
 }
 
 export function Logo({ color = 'dark', emblem, height = HEIGHT, width = WIDTH }: LogoProps): React.JSX.Element {
-  let url: string;
-
-  if (emblem) {
-    url = color === 'light' ? '/assets/logo-emblem.svg' : '/assets/logo-emblem--dark.svg';
-  } else {
-    url = color === 'light' ? '/assets/logo.svg' : '/assets/logo--dark.svg';
-  }
+  const file = emblem
+    ? color === 'light'
+      ? 'logo-emblem.svg'
+      : 'logo-emblem--dark.svg'
+    : color === 'light'
+      ? 'logo.svg'
+      : 'logo--dark.svg';
+  const url = assetPath(`/assets/${file}`);
 
   return <Box alt="logo" component="img" height={height} src={url} width={width} />;
 }

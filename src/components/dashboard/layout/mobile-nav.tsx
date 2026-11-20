@@ -14,6 +14,7 @@ import { CaretUpDownIcon } from '@phosphor-icons/react/dist/ssr/CaretUpDown';
 
 import type { NavItemConfig } from '@/types/nav';
 import { paths } from '@/paths';
+import { assetPath } from '@/lib/asset-path';
 import { isNavItemActive } from '@/lib/is-nav-item-active';
 import { Logo } from '@/components/core/logo';
 
@@ -101,7 +102,7 @@ export function MobileNav({ open, onClose }: MobileNavProps): React.JSX.Element 
           <Box
             component="img"
             alt="Pro version"
-            src="/assets/devias-kit-pro.png"
+            src={assetPath('/assets/devias-kit-pro.png')}
             sx={{ height: 'auto', width: '160px' }}
           />
         </Box>

@@ -8,6 +8,7 @@ import { PlusIcon } from '@phosphor-icons/react/dist/ssr/Plus';
 import { UploadIcon } from '@phosphor-icons/react/dist/ssr/Upload';
 
 import { config } from '@/config';
+import { assetPath } from '@/lib/asset-path';
 import { CustomersView } from '@/components/dashboard/customer/customers-view';
 import type { Customer } from '@/components/dashboard/customer/customers-table';
 import customersData from '@/data/customers.json';
@@ -16,6 +17,7 @@ export const metadata = { title: `Customers | Dashboard | ${config.site.name}` }
 
 const customers: Customer[] = customersData.map((customer) => ({
   ...customer,
+  avatar: assetPath(customer.avatar),
   preferredContact: customer.preferredContact as Customer['preferredContact'],
   status: customer.status as Customer['status'],
   lastContacted: customer.lastContacted ? new Date(customer.lastContacted) : null,
